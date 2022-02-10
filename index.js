@@ -11,12 +11,14 @@ app.use(cors()); // While Processing a HTTP Request, This Helps to Configure How
 
 app.get('/posts', postController.getAllPosts); // to Get All Posts When a GET '/posts' Endpoint is Called
 app.get('/posts/:postId', postController.getPostById); // to Get a Post Whose 'postId' is Matched With When a GET '/posts' Endpoint With a 'postId' Route Parameter is Called
+app.get('/users/:userId/posts', postController.getPostByUserId); // to Get All Posts Whose 'userId' is Matched With When a GET '/users' Endpoint With 'userId' and 'posts' Route Parameters is Called
 app.get('/todos', todoController.getAllTodos); // to Get All Todos When a GET '/todos' Endpoint is Called
 app.get('/todos/:todoId', todoController.getTodoById); // to Get a Todo Whose 'todoId' is Matched With When a GET '/todos' Endpoint With a 'todoId' Route Parameter is Called
+app.get('/users/:userId/todos', todoController.getTodoByUserId); // to Get All Todos Whose 'userId' is Matched With When a GET '/users' Endpoint With 'userId' and 'todos' Route Parameters is Called
 app.get('/users', userController.getAllUsers); // to Get All Users When a GET '/users' Endpoint is Called
 app.get('/users/:userId', userController.getUserById); // to Get a User Whose 'userId' is Matched With When a GET '/users' Endpoint With a 'userId' Route Parameter is Called
-app.get('/users/:userId/posts', userController.getPostByUserId); // to Get All Posts Whose 'userId' is Matched With When a GET '/users' Endpoint With 'userId' and 'posts' Route Parameters is Called
-app.get('/users/:userId/todos', userController.getTodoByUserId); // to Get All Todos Whose 'userId' is Matched With When a GET '/users' Endpoint With 'userId' and 'todos' Route Parameters is Called
+
+
 
 const PORT = 5000; // Assigning a PORT to Run a HTTP Server on
 
